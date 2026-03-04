@@ -113,8 +113,8 @@ cyberbullying-detection/
 
 ## 👥 Team
 
-| Name | Roll No. |
-|------|----------|
+| Name |
+|------|
 | Annamreddy Dinesh |
 | Perugu Ajay Kumar |
 | Vakkala Shariq Adnan |
