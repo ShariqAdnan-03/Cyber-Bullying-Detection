@@ -107,12 +107,6 @@ The project includes a **Topic Modeling** module that analyzes the `cyberbullyin
 
 ---
 
-## 📄 License
-
-This project is open-source and available under the [MIT License](LICENSE).
-
----
-
 ## 🙋 Author
 
 **Shariq Adnan** — [GitHub](https://github.com/ShariqAdnan-03)
