@@ -5,6 +5,12 @@ An AI-powered real-time engine designed to identify and categorize toxic behavio
 
 ---
 
+<img width="1023" height="486" alt="image" src="https://github.com/user-attachments/assets/7cf1e170-0942-4946-8d8e-b5761c4b051c" />
+<img width="1884" height="785" alt="image" src="https://github.com/user-attachments/assets/7d1bfd4b-5d50-48e6-ab54-b1c9de20103c" />
+<img width="1880" height="775" alt="image" src="https://github.com/user-attachments/assets/320d4193-5e45-489f-ac38-7815de1ad621" />
+
+
+
 ## 🚀 Key Features
 
 - **Dual-Layer Prediction** — Provides a binary "Cyberbullying" vs "Non-Cyberbullying" verdict alongside a specific sub-category (e.g., Gender, Religion, Age).
