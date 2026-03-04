@@ -1,0 +1,53 @@
+Notebook
+---------
+1. Importing the packages
+2. Exploring the dataset 
+	- Cyberbullying Dataset (Two Data)
+3. Data processing
+	- cleaning the data
+	- removing the punctuation and mentions
+	- replacing null values
+	- removing the html tags
+4. Label Processing
+	- Label Encoding from object to int
+5. Oversampling the data
+	- Using SMOTE
+6. Tokenization the data
+	- TFIDF Countvectorizer
+7. Visualization using seaborn & matplotlib
+	- displaying sample outcome
+	- WordCould
+8. Feature Selection using pandas iloc
+9. Splitting the data to train and test
+10. Building the model 
+	
+	- Support Vector Machine
+	- Random Forest
+	- LogisticRegression
+	- MLP - OVO
+	- MLP - OVR
+	- Voting Classifier - (Boosted DT + Bagging RF)
+	
+11. Training and building the model 
+12. Dumping the model for classification the text further 
+
+FrontEnd
+--------
+
+13. Frontend is developed with help of Flask Framework, along with Registration and Login setup with support of Sqlite DB
+14. Importing the packages
+15. Appending the model file and tokenizer
+16. User gives input 
+17. The given input is tokenized and processed for prediction
+18. Trained model is used for prediction
+19. Topic modelling is used extracted top words from text
+20. Final outcome is displayed through frontend
+
+
+Extension 
+----------
+In the base paper, author mentioned to use MLP with OVO and OVR for analysis and predict the cyberbullying in the text and compared with different models,
+As an extension we applied an ensemble method  combining the predictions of multiple individual models to produce a more robust and accurate final prediction. 
+However, we can further enhance the performance by exploring other ensemble techniques such as Voting Classifier for analysis the data and Topic modelling for extract top words from the text,
+As an extension we can build the front end using the flask framework for user testing and with user authentication.
+

@@ -1,0 +1,13 @@
+# Environments
+venv_old_project/
+venv_capstone/
+venv_310/
+env/
+
+# Python artifacts
+__pycache__/
+*.pyc
+
+# Large Data/Models (Optional - GitHub has a 100MB limit per file)
+*.sav
+*.pkl
