@@ -1,112 +1,130 @@
-# 🛡️ Cyberbullying Detection System
-> **Social Media Forensics: An Adaptive Approach Based on Neural Networks with Uncertainty**
+# 🛡️ Forensic Analysis of Social Media: Detecting Cyberbullying-Related Hate Speech
 
-An AI-powered real-time engine designed to identify and categorize toxic behavior on social media platforms. It leverages advanced Natural Language Processing (NLP) to perform both **Binary Classification** (Is it bullying?) and **Multi-Class Categorization** (What type of bullying is it?).
+<p align="center">
+  <img src="https://img.shields.io/badge/Python-3.8+-blue.svg" />
+  <img src="https://img.shields.io/badge/Framework-Flask-green.svg" />
+  <img src="https://img.shields.io/badge/ML-Ensemble%20Learning-orange.svg" />
+  <img src="https://img.shields.io/badge/Patent-Applied%20202541122189-purple.svg" />
+</p>
 
----
+An adaptive ensemble learning system for detecting cyberbullying-related hate speech on social media. Combines SVM, Random Forest, Logistic Regression, and MLP classifiers with a **Voting Classifier ensemble** (Boosted DT + Bagging RF) to achieve up to **100% accuracy** on benchmark datasets.
 
-<img width="1023" height="486" alt="image" src="https://github.com/user-attachments/assets/7cf1e170-0942-4946-8d8e-b5761c4b051c" />
-<img width="1884" height="785" alt="image" src="https://github.com/user-attachments/assets/7d1bfd4b-5d50-48e6-ab54-b1c9de20103c" />
-<img width="1880" height="775" alt="image" src="https://github.com/user-attachments/assets/320d4193-5e45-489f-ac38-7815de1ad621" />
-
-
-
-## 🚀 Key Features
-
-- **Dual-Layer Prediction** — Provides a binary "Cyberbullying" vs "Non-Cyberbullying" verdict alongside a specific sub-category (e.g., Gender, Religion, Age).
-- **Real-Time Dashboard** — A Flask-based web interface for instant message analysis.
-- **Topic Modeling** — Uses Latent Dirichlet Allocation (LDA) to extract underlying themes from large-scale social media datasets.
-- **Legacy Model Support** — Successfully integrates and runs pre-trained models from scikit-learn v1.0.2 within a modern Python 3.10 environment.
-
----
-
-## 🛠️ Tech Stack
-
-| Category | Tools & Libraries |
-|---|---|
-| Backend | Python 3.10, Flask |
-| Frontend | HTML5, CSS3, JavaScript |
-| Machine Learning | Scikit-learn, TensorFlow, Joblib |
-| NLP & Analysis | NLTK, Pandas, NumPy, Gensim |
-| Database | SQLite (for user authentication) |
+> 🔏 **Patent Application No:** `202541122189` — [Check Status](https://iprsearch.ipindia.gov.in/PublicSearch/PublicationSearch/ApplicationStatus)  
+> 📚 **Course Code:** CBS1904
 
 ---
 
 ## 🧠 How It Works
 
-### 1. Data Preprocessing
-The system cleans raw social media text by:
-- Removing special characters
-- Converting text to lowercase
-- Performing **Lemmatization** using NLTK's WordNet
-- Filtering out common English stopwords to focus on high-impact keywords
-
-### 2. Feature Extraction
-Text data is transformed into numerical vectors using **TF-IDF (Term Frequency-Inverse Document Frequency)**, allowing the ML models to understand the mathematical importance of specific toxic phrases.
-
-### 3. Classification Engine
-The core engine uses a **"Model Tournament"** approach, comparing multiple algorithms:
-
-- **Decision Tree & Random Forest** — Robust structured data analysis
-- **AdaBoost & Bagging Classifiers** — Reduce bias and improve prediction accuracy
-- **Voting Classifier** — Ensemble method combining strengths of multiple models for the final verdict
-
----
-
-## 📂 Project Structure
-
 ```
-├── app.py                    # Main Flask application
-├── topic_modelling.py        # LDA analysis script
-├── cyberbullying_tweets.csv  # Training dataset
-├── static/                   # CSS, JS, and UI images
-├── templates/                # HTML pages (Index, Predict, Dashboard)
-├── .gitignore                # Prevents uploading large models/venvs
-└── *.pickle / *.sav          # Pre-trained ML models and vectorizers
+Raw Social Media Text
+        ↓
+Preprocessing (clean, encode, SMOTE oversample, TF-IDF vectorize)
+        ↓
+ML Models: SVM · Random Forest · Logistic Regression · MLP-OVO · MLP-OVR
+        ↓
+Voting Classifier (Boosted DT + Bagging RF)  ← best performer
+        ↓
+Topic Modeling (keyword/theme extraction)
+        ↓
+Prediction: Cyberbullying Detected / Not Detected
 ```
 
 ---
 
-## ⚙️ Installation & Setup
+## 📈 Results
 
-### 1. Clone the repository
-```bash
-git clone https://github.com/ShariqAdnan-03/Cyber-Bullying-Detection.git
-cd Cyber-Bullying-Detection
-```
+The **Voting Classifier** outperformed all individual models across both datasets:
 
-### 2. Set up the Python 3.10 Environment
-```bash
-python -m venv venv_old_project
-.\venv_old_project\Scripts\activate
-```
-
-### 3. Install Dependencies
-```bash
-pip install flask scikit-learn==1.2.2 pandas nltk gensim
-```
-
-### 4. Run the Application
-```bash
-python app.py
-```
-
-The app will be available at `http://127.0.0.1:5000` by default.
+| Dataset | Task | Voting Classifier Accuracy |
+|---------|------|---------------------------|
+| Dataset 1 | Binary | **99.4%** |
+| Dataset 1 | Multi-class | **98.5%** |
+| Dataset 2 | Binary | **100%** |
+| Dataset 2 | Multi-class | **99.7%** |
 
 ---
 
-## 📊 Results & Visualization
+## 🛠️ Tech Stack
 
-The project includes a **Topic Modeling** module that analyzes the `cyberbullying_tweets.csv` dataset. Sample output identifies clusters such as:
-
-| Topic | Keywords | Description |
-|---|---|---|
-| Topic 0 | high, school, girl, bullied | School-related bullying |
-| Topic 1 | religion, hate, muslim, attack | Religion-based harassment |
-| Topic 2 | age, old, young, boomer | Age-based discrimination |
+| Layer | Tools |
+|-------|-------|
+| Language | Python 3.8+ |
+| ML | scikit-learn, imbalanced-learn (SMOTE) |
+| NLP | NLTK, TF-IDF |
+| Visualization | Matplotlib, Seaborn, WordCloud |
+| Web App | Flask, HTML/CSS/JS, Bootstrap 4 |
+| Database | SQLite3 |
+| Environment | Anaconda, Jupyter Notebook |
 
 ---
 
-## 🙋 Author
+## ⚙️ Setup
 
-**Shariq Adnan** — [GitHub](https://github.com/ShariqAdnan-03)
+```bash
+# 1. Clone the repo
+git clone https://github.com/your-username/cyberbullying-detection.git
+cd cyberbullying-detection
+
+# 2. Create environment
+conda create -n cyberbully python=3.8
+conda activate cyberbully
+
+# 3. Install dependencies
+pip install -r requirements.txt
+
+# 4. Run the app
+cd app && python app.py
+# Open http://127.0.0.1:5000
+```
+
+---
+
+## 🚀 Usage
+
+1. Register / Login via the web interface
+2. Enter a social media post or tweet
+3. Get an instant prediction — **cyberbullying** or **not**
+
+---
+
+## 📁 Project Structure
+
+```
+cyberbullying-detection/
+├── datasets/          # Dataset 1 & 2 (CSV)
+├── notebooks/         # Preprocessing, training, topic modeling
+├── models/            # Saved .pkl model files
+├── app/               # Flask app (templates, static, app.py)
+├── utils/             # preprocess.py, vectorizer.py, predict.py
+└── requirements.txt
+```
+
+---
+
+## 🔮 Future Scope
+
+- Multilingual support (Arabic, Hindi) via multilingual BERT
+- GPU-accelerated transformers (BERT, RoBERTa)
+- LLM integration for nuanced context understanding
+- Real-time browser extension / API deployment
+
+---
+
+## 👥 Team
+
+| Name | Roll No. |
+|------|----------|
+| Annamreddy Dinesh |
+| Perugu Ajay Kumar |
+| Vakkala Shariq Adnan |
+
+---
+
+## 📚 References
+
+1. Yarbrough et al. — *Cyberbullying and the Faculty Victim Experience* [DOI](https://doi.org/10.1007/s42380-023-00173-x)
+2. Alzaqebah et al. — *Cyberbullying Detection for Arabic Datasets* [DOI](https://doi.org/10.1016/j.jksuci.2023.101652)
+3. Muneer et al. — *Stacking Ensemble + Enhanced BERT* [DOI](https://doi.org/10.3390/info14080467)
+4. Sultan et al. — *Shallow-to-Deep Learning for Hate Speech* [DOI](https://doi.org/10.32604/cmc.2023.032993)
+5. Fulantelli et al. — *Cyberbullying & Cyberhate: Systematic Review* [DOI](https://doi.org/10.3389/fpsyg.2022.909909)
