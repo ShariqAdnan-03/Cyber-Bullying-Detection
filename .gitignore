@@ -11,3 +11,4 @@ __pycache__/
 # Large Data/Models (Optional - GitHub has a 100MB limit per file)
 *.sav
 *.pkl
+*.pickle
